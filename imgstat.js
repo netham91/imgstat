@@ -1,8 +1,12 @@
 function PixelData(canvas_id, img_path, callback) {
+    
+    
     ctx = document.getElementById(canvas_id).getContext('2d');
     var img = new Image();
     img.src = img_path;
     var data = [];
+  
+
     img.onload = function() {
         ctx.drawImage(img, 0, 0);
         console.log("done");
@@ -17,14 +21,10 @@ function PixelData(canvas_id, img_path, callback) {
                 pData.pos(x, y);
                 pData.fill(pixels[currentPos], pixels[currentPos + 1], pixels[currentPos + 2], pixels[currentPos + 3]);
                 data[x][y] = pData;
-                //data[x][y].pushData(currentPos,currentPos+1,currentPos+2,currentPos+3); 
             }
         }
-        //callback("1");
-        //var d1 = loadData(img, ctx);
-        //console.log(data);
-        callback(data);
-        //return d1;
+        console.log(data);
+        return data;
     };
     
 }

@@ -3,7 +3,8 @@
 
 <head>
     <title> imgstat</title>
-    <script type="text/javascript" src="imgstat.js"></script>
+    <script type="text/javascript" src="getPixels.js"></script>
+     <script type="text/javascript" src="imgstat.js"></script>
 
 
 
@@ -18,16 +19,10 @@
     <div id="details"></div>
 </body>
 <script type="text/javascript">
-    
-    
+var pixels;
+getPixels("sample.jpeg",function(data){ pixels=data; console.log(pixels);});
+PixelData("imgCanvas","sample.jpeg");
 
-    
-    var da = new PixelData('imgCanvas', 'sample.jpeg',function(data){console.log(data);});
-    //console.log(da);  
-
-    
-   
- 
 
 
 </script>
